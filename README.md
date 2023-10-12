@@ -41,23 +41,89 @@ Step 6:Close the Android project.
 ## Program:
  ```
 /*
-Program to Develop an application that uses Font Size using Android Studio .
-Developed by: 
-RegisterNumber:  
+Program to Develop an application that uses Font Size using Android Studio.
+Developed by: Srinivasan S
+Registeration Number : 212220230048
 */
 ```
 
 ## MainActivity.java:
+```java
+
+package com.firstapp.fontsize;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+import android.app.Activity;
+import android.graphics.Typeface;
+import android.graphics.Color;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 
+public class MainActivity extends AppCompatActivity {
+    float font = 24;
+    int i = 1;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        final TextView t1 = (TextView)findViewById(R.id.textView1);
+        Button b1 = (Button)findViewById(R.id.button1);
+        b1.setOnClickListener(new View.OnClickListener()    {
+            public void onClick(View view) {
+                t1.setTextSize(font);
+                font = font+4;
+                if(font==40)
+                    font = 20;
+            }
+        });
 
 
+    }
+}
+```
 
 ## activity_main.xml:
+```java
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="70dp"
+        android:gravity="left"
+        android:text="HELLO WORLD"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="70dp"
+        tools:layout_editor_absoluteY="376dp" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:gravity="center"
+        android:text="Change Font Size"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="456dp" />
+    </RelativeLayout>
+```
 ## Output:
-
-
+![image](https://github.com/SrinivasanAIDS/Ex.No-2-b-Font-Size/assets/103049243/182bea88-b845-4f6f-add4-3039da90a168)
 
 ## Result:
 Thus, the program for android application, Font Size was executed successfully using Android Studio.
